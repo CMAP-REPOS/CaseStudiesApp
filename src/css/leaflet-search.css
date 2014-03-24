@@ -74,11 +74,11 @@
 }
 .leaflet-control-search .search-button {
 	display:block;
-	float:left;
-	width:22px;
-	height:22px;	
+	float:top;
+	width:24px;
+	height:24px;	
 	background: url('../images/search-icon.png') no-repeat 0 0;
-	border-radius:4px;
+	border-radius:6px;
 }
 .leaflet-control-search .search-button:hover {
 	background: url('../images/search-icon.png') no-repeat 0 -21px;

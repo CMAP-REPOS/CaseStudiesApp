@@ -32,12 +32,12 @@ L.Control.Search = L.Control.extend({
 		layer: null,				//layer where search markers(is a L.LayerGroup)		
 		callData: null,				//function that fill _recordsCache, passed searching text by first param and callback in second
 		//TODO important! implements uniq option 'sourceData' that recognizes source type: url,array,callback or layer		
-		propertyName: 'title',		//property in marker.options(or feature.properties for vector layer) trough filter elements in layer
-		propertyLoc: 'loc',			//field name for remapping location, using array: ['latname','lonname'] for select double fields(ex. ['lat','lon'] )
+		propertyName: 'Name',		//property in marker.options(or feature.properties for vector layer) trough filter elements in layer
+		propertyLoc: 'Coordinates',			//field name for remapping location, using array: ['latname','lonname'] for select double fields(ex. ['lat','lon'] )
 		//TODO implement sub property filter for propertyName,propertyLoc like this:  "prop.subprop.title"
 		callTip: null,				//function that return row tip html node(or html string), receive text tooltip in first param
 		filterJSON: null,			//callback for filtering data to _recordsCache
-		minLength: 1,				//minimal text length for autocomplete
+		minLength: 3,				//minimal text length for autocomplete
 		initial: true,				//search elements only by initial text
 		autoType: true,				//complete input with first suggested result and select this filled-in text.
 		delayType: 400,				//delay while typing for show tooltip
@@ -51,7 +51,7 @@ L.Control.Search = L.Control.extend({
 		circleLocation: true,		//draw a circle in location found
 		markerLocation: false,		//draw a marker in location found
 		zoom: 15,					//zoom after pan to location found, default: map.getZoom()
-		text: 'Project Name...',			//placeholder value	
+		text: 'Search by Name...',			//placeholder value	
 		textCancel: 'Cancel',		//title in cancel button
 		textErr: 'Location not found',	//error message
 		position: 'topleft',
@@ -62,7 +62,7 @@ L.Control.Search = L.Control.extend({
 
 	initialize: function(options) {
 		L.Util.setOptions(this, options);
-		this._inputMinSize = this.options.text ? this.options.text.length : 10;
+		this._inputMinSize = this.options.text ? this.options.text.length : 20;
 		this._layer = this.options.layer || new L.LayerGroup();
 		this._filterJSON = this.options.filterJSON || this._defaultFilterJSON;
 		this._autoTypeTmp = this.options.autoType;	//useful for disable autoType temporarily in delete/backspace keydown
