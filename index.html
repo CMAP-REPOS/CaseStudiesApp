@@ -63,7 +63,7 @@
 		var aer = new L.TileLayer(aerUrl, {minZoom: 6, maxZoom: 18, attribution: aerAttrib});
 
 
-		// Define County Border style and add to map
+		// Define Regional Border style and add to map
 		var countyStyle = {color: '#33334C', weight: 2, opacity:0.9, fillOpacity:0};
 		countyOutlineLayer = L.geoJson(countyOutlines, {
 			style: countyStyle
@@ -84,7 +84,7 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
         citizenProfileLayerZoom = L.geoJson(citizenProfile, {                
             pointToLayer: function (feature, latlng) {                    
@@ -99,15 +99,10 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 
 		map.addLayer(citizenProfileLayer);
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(citizenProfileLayer), map.addLayer(citizenProfileLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(citizenProfileLayerZoom), map.addLayer(citizenProfileLayer)}
-		});		
-	
 
         communityDevelopmentLayer = L.geoJson(communityDevelopment, {                
             pointToLayer: function (feature, latlng) {                    
@@ -122,7 +117,7 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 
 		communityDevelopmentLayerZoom = L.geoJson(communityDevelopment, {                
@@ -138,14 +133,11 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 		
         map.addLayer(communityDevelopmentLayer); 
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(communityDevelopmentLayer), map.addLayer(communityDevelopmentLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(communityDevelopmentLayerZoom), map.addLayer(communityDevelopmentLayer)}
-		});	
+
 		
         completedLTAProjectLayer = L.geoJson(completedLTAProject, {                
             pointToLayer: function (feature, latlng) {                    
@@ -160,7 +152,7 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 
         completedLTAProjectLayerZoom = L.geoJson(completedLTAProject, {                
@@ -176,14 +168,11 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 		
         map.addLayer(completedLTAProjectLayer); 
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(completedLTAProjectLayer), map.addLayer(completedLTAProjectLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(completedLTAProjectLayerZoom), map.addLayer(completedLTAProjectLayer)}
-		});	
+
 		
         economicDevelopmentLayer = L.geoJson(economicDevelopment, {                
             pointToLayer: function (feature, latlng) {                    
@@ -214,14 +203,11 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 		
         map.addLayer(economicDevelopmentLayer); 
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(economicDevelopmentLayer), map.addLayer(economicDevelopmentLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(economicDevelopmentLayerZoom), map.addLayer(economicDevelopmentLayer)}
-		});	
+
 		
         environmentLayer = L.geoJson(environment, {                
             pointToLayer: function (feature, latlng) {                    
@@ -236,7 +222,7 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 
         environmentLayerZoom = L.geoJson(environment, {                
@@ -252,14 +238,11 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 		
         map.addLayer(environmentLayer); 
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(environmentLayer), map.addLayer(environmentLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(environmentLayerZoom), map.addLayer(environmentLayer)}
-		});	
+
 		
         housingLayer = L.geoJson(housing, {                
             pointToLayer: function (feature, latlng) {                    
@@ -274,7 +257,7 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 
         housingLayerZoom = L.geoJson(housing, {                
@@ -290,14 +273,11 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 		
         map.addLayer(housingLayer); 
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(housingLayer), map.addLayer(housingLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(housingLayerZoom), map.addLayer(housingLayer)}
-		});	
+
 		
         landUseLayer = L.geoJson(landUse, {                
             pointToLayer: function (feature, latlng) {                    
@@ -312,7 +292,7 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 
         landUseLayerZoom = L.geoJson(landUse, {                
@@ -328,14 +308,11 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 		
         map.addLayer(landUseLayer); 
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(landUseLayer), map.addLayer(landUseLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(landUseLayerZoom), map.addLayer(landUseLayer)}
-		});	
+
 		
         transportationLayer = L.geoJson(transportation, {                
             pointToLayer: function (feature, latlng) {                    
@@ -350,7 +327,7 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });
 
         transportationLayerZoom = L.geoJson(transportation, {                
@@ -366,17 +343,14 @@
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
-        }
+			}
         });		
 		
         map.addLayer(transportationLayer); 
-		map.on('zoomend', function(e) {
-			 if ( map.getZoom() > 12 ){ map.removeLayer(transportationLayer), map.addLayer(transportationLayerZoom)}
-			 else if ( map.getZoom() <= 12 ){ map.removeLayer(transportationLayerZoom), map.addLayer(transportationLayer)}
-		});	
+
 
 		
-		// Define layer groups and add to map legend
+		//Define layer groups and add to map legends (one legend for normal, one for zoomed)
 		var baseMaps = {
 			"Streets": osm,
 			"Aerials": aer
@@ -390,28 +364,78 @@
 			"<img src='src\\images\\icon_environment.png'> Environment": environmentLayer,
 			"<img src='src\\images\\icon_housing.png'> Housing": housingLayer,
 			"<img src='src\\images\\icon_landUse.png'> Land Use": landUseLayer,
-			"<img src='src\\images\\icon_transportation.png'> Transportation": transportationLayer
-			
+			"<img src='src\\images\\icon_transportation.png'> Transportation": transportationLayer,
 		};
-
+		
+		var overlayMapsZoom = {
+			"<img src='src\\images\\icon_citizenProfiles.png'> Citizen Profiles ": citizenProfileLayerZoom,
+			"<img src='src\\images\\icon_communityDevelopment.png'> Community Development ": communityDevelopmentLayerZoom,
+			"<img src='src\\images\\icon_completedLTAProject.png'> Completed LTA Project ": completedLTAProjectLayerZoom,
+			"<img src='src\\images\\icon_economicDevelopment.png'> Economic Development ": economicDevelopmentLayerZoom,
+			"<img src='src\\images\\icon_environment.png'> Environment ": environmentLayerZoom,
+			"<img src='src\\images\\icon_housing.png'> Housing ": housingLayerZoom,
+			"<img src='src\\images\\icon_landUse.png'> Land Use ": landUseLayerZoom,
+			"<img src='src\\images\\icon_transportation.png'> Transportation ": transportationLayerZoom
+		};		
+		
 		var legend = new L.control.layers(baseMaps, overlayMaps, {
 			collapsed: false
 		}).addTo(map);
+
+		var legendZoom = new L.control.layers(baseMaps, overlayMapsZoom, {
+			collapsed: false
+		});
 		
 	
-		//Add geo-search
-		new L.Control.GeoSearch({
-			position:'topright',
-			provider: new L.GeoSearch.Provider.Google({
-				language: 'en',
-				region: 'US'
-			})
-		}).addTo(map);
-		
-		
+		//Toggles layer and legend visibility based on scale
+		var i = 0;
+		map.on('zoomend', function(e) {
+			if ( map.getZoom() > 12 && i==0 ){
+				map.removeLayer(citizenProfileLayer);
+				map.removeLayer(communityDevelopmentLayer);
+				map.removeLayer(completedLTAProjectLayer);
+				map.removeLayer(economicDevelopmentLayer);
+				map.removeLayer(environmentLayer);
+				map.removeLayer(housingLayer);
+				map.removeLayer(landUseLayer);
+				map.removeLayer(transportationLayer);
+				map.removeControl(legend);
+				map.addControl(legendZoom);
+				map.addLayer(citizenProfileLayerZoom);
+				map.addLayer(communityDevelopmentLayerZoom);
+				map.addLayer(completedLTAProjectLayerZoom);
+				map.addLayer(economicDevelopmentLayerZoom);
+				map.addLayer(environmentLayerZoom);
+				map.addLayer(housingLayerZoom);
+				map.addLayer(landUseLayerZoom);
+				map.addLayer(transportationLayerZoom);
+				i=1;
+			}
+			else if ( map.getZoom() <= 12 && i==1 ){
+				map.removeLayer(citizenProfileLayerZoom);
+				map.removeLayer(communityDevelopmentLayerZoom);
+				map.removeLayer(completedLTAProjectLayerZoom);
+				map.removeLayer(economicDevelopmentLayerZoom);
+				map.removeLayer(environmentLayerZoom);
+				map.removeLayer(housingLayerZoom);
+				map.removeLayer(landUseLayerZoom);
+				map.removeLayer(transportationLayerZoom);
+				map.removeControl(legendZoom);
+				map.addControl(legend);
+				map.addLayer(citizenProfileLayer);
+				map.addLayer(communityDevelopmentLayer);
+				map.addLayer(completedLTAProjectLayer);
+				map.addLayer(economicDevelopmentLayer);
+				map.addLayer(environmentLayer);
+				map.addLayer(housingLayer);
+				map.addLayer(landUseLayer);
+				map.addLayer(transportationLayer);
+				i=0;
+			}
+		});
+
 		//Add overview map
 		var miniURL = new L.StamenTileLayer("toner")
-		////var miniURL = new L.TileLayer(osmUrl);
 		var rect1 = {color: '#3366FF', weight: 4, opacity:1, fillOpacity:0};
 		var miniMap = new L.Control.MiniMap(miniURL, {aimingRectOptions: rect1, 
 			zoomLevelFixed: 7, 
@@ -420,6 +444,7 @@
 			height:200
 		}).addTo(map);
 		
+	
 		//Add scale bar
 		L.control.scale({
 			imperial: true,
@@ -436,7 +461,15 @@
 			};
 		});
 		map.addControl(btn);		
-		
+
+		//Add geo-search
+		new L.Control.GeoSearch({
+			position:'topleft',
+			provider: new L.GeoSearch.Provider.Google({
+				language: 'en',
+				region: 'US'
+			})
+		}).addTo(map);		
 
 
 	</script>
