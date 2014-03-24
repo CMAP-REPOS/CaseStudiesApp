@@ -36,10 +36,7 @@
 	<script src="http://maps.googleapis.com/maps/api/js?&key=AIzaSyBkZvruAqjHD2fcf-swenX2Y6EiM3DVKhg&sensor=false&amp;libraries=places"></script>
 	<link rel="stylesheet" href="src/css/l.geosearch.css" />
 	<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
-<<<<<<< HEAD
 	<script src="src/js/FunctionButton.js"></script>
-=======
->>>>>>> 0b54ace37c81c49d2b15de85410e1d41477ef595
 	
 </head>
 <body>
@@ -415,11 +412,7 @@
 		//Add overview map
 		var miniURL = new L.StamenTileLayer("toner")
 		////var miniURL = new L.TileLayer(osmUrl);
-<<<<<<< HEAD
 		var rect1 = {color: '#3366FF', weight: 4, opacity:1, fillOpacity:0};
-=======
-		var rect1 = {color: '#3366FF', weight: 3, opacity:1, fillOpacity:0};
->>>>>>> 0b54ace37c81c49d2b15de85410e1d41477ef595
 		var miniMap = new L.Control.MiniMap(miniURL, {aimingRectOptions: rect1, 
 			zoomLevelFixed: 7, 
 			autoToggleDisplay: false,
@@ -433,7 +426,6 @@
 			metric: true
 		}).addTo(map);
 		
-<<<<<<< HEAD
 		
 		//Add full extent button
 		var btn = L.functionButtons([{ content: "<img src='src\\images\\icon_fullExtent.png'>",
@@ -445,8 +437,6 @@
 		});
 		map.addControl(btn);		
 		
-=======
->>>>>>> 0b54ace37c81c49d2b15de85410e1d41477ef595
 
 
 	</script>
