@@ -25,7 +25,7 @@ L.FunctionButtons = L.Control.extend({
 			link.href = button.href || '#';
 			if( button.href )
 				link.target = 'funcbtn';
-			link.style.padding = '0 4px';
+			link.style.padding = '0 3px';
 			link.style.width = 'auto';
 			link.style.minWidth = '20px';
 			if( button.bgColor )
