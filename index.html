@@ -7,22 +7,22 @@
 	<link rel="stylesheet" href="src/css/fullscreen.css" />
 	
 	<!-- Leaflet -->
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+	<link rel="stylesheet" href="src/css/leaflet.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.ie.css" /><![endif]-->
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js" type="text/javascript"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js" type="text/javascript"></script>
 
 	<!-- GeoJSON Data -->
-	<script src="src/js/Citizen_Profile.js"></script>	
-	<script src="src/js/Community_Development.js"></script>	
-	<script src="src/js/Completed_LTA_Project.js"></script>	
-	<script src="src/js/Economic_Development.js"></script>	
-	<script src="src/js/Environment.js"></script>	
-	<script src="src/js/Housing.js"></script>	
-	<script src="src/js/Land_Use.js"></script>	
-	<script src="src/js/Transportation.js"></script>
+	<script src="src/js/citizenProfile.js"></script>	
+	<script src="src/js/communityDevelopment.js"></script>	
+	<script src="src/js/completedLTAProject.js"></script>	
+	<script src="src/js/economicDevelopment.js"></script>	
+	<script src="src/js/environment.js"></script>	
+	<script src="src/js/housing.js"></script>	
+	<script src="src/js/landUse.js"></script>	
+	<script src="src/js/transportation.js"></script>
 	<script src="src/js/CountyOutlines.js"></script>
 	
-	<script src="src/js/Case_Studies.js"></script>	
+	<script src="src/js/caseStudies.js"></script>	
 	
 	<!-- Overview Map -->
 	<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
@@ -99,7 +99,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
         citizenProfileLayerZoom = L.geoJson(citizenProfile, {                
@@ -114,7 +114,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 
@@ -132,7 +132,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 
@@ -148,7 +148,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 		
@@ -167,7 +167,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 
@@ -183,7 +183,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 		
@@ -202,7 +202,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
         }
         });
 
@@ -218,7 +218,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 		
@@ -237,7 +237,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 
@@ -253,7 +253,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 		
@@ -272,7 +272,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 
@@ -288,7 +288,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 		
@@ -307,7 +307,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 
@@ -323,7 +323,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 		
@@ -342,7 +342,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });
 
@@ -358,7 +358,7 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<b>Project Name: </b>"+feature.properties.Name+"<br><b>Location: </b>"+feature.properties.Location_o+"<br><br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+">More Info</a></b><br><br><b>Tags: </b>"+feature.properties.Related_To);
+                layer.bindPopup("<center><b><font size=\"4em\"></b>"+feature.properties.Name+"</font><br><img src ="+feature.properties.Photo+" width=\"70%\" hieght=\"70%\"></center><b>Location: </b>"+feature.properties.Location_o+"<br><b>Description: </b>"+feature.properties.Brief_Overview+"<br><b><a href="+feature.properties.More_infor+" target=\"_blank\">More Info</a></b><br><br><b>Related Topics: </b>"+feature.properties.Related_To);
 			}
         });		
 		
@@ -378,25 +378,25 @@
 		};		
 		
 		var overlayMaps = {
-			"<img src='src\\images\\icon_citizenProfiles.png'> Citizen Profiles": citizenProfileLayer,
-			"<img src='src\\images\\icon_communityDevelopment.png'> Community Development": communityDevelopmentLayer,
-			"<img src='src\\images\\icon_completedLTAProject.png'> Completed LTA Project": completedLTAProjectLayer,
-			"<img src='src\\images\\icon_economicDevelopment.png'> Economic Development": economicDevelopmentLayer,
-			"<img src='src\\images\\icon_environment.png'> Environment": environmentLayer,
-			"<img src='src\\images\\icon_housing.png'> Housing": housingLayer,
-			"<img src='src\\images\\icon_landUse.png'> Land Use": landUseLayer,
-			"<img src='src\\images\\icon_transportation.png'> Transportation": transportationLayer,
+			"<img src='src\\images\\icon_citizenProfiles.png'>Citizen Profiles": citizenProfileLayer,
+			"<img src='src\\images\\icon_communityDevelopment.png'>Community Development&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp": communityDevelopmentLayer,
+			"<img src='src\\images\\icon_completedLTAProject.png'>Completed LTA Project": completedLTAProjectLayer,
+			"<img src='src\\images\\icon_economicDevelopment.png'>Economic Development": economicDevelopmentLayer,
+			"<img src='src\\images\\icon_environment.png'>Environment": environmentLayer,
+			"<img src='src\\images\\icon_housing.png'>Housing": housingLayer,
+			"<img src='src\\images\\icon_landUse.png'>Land Use": landUseLayer,
+			"<img src='src\\images\\icon_transportation.png'>Transportation": transportationLayer,
 		};
 		
 		var overlayMapsZoom = {
-			"<img src='src\\images\\icon_citizenProfiles.png'> Citizen Profiles ": citizenProfileLayerZoom,
-			"<img src='src\\images\\icon_communityDevelopment.png'> Community Development ": communityDevelopmentLayerZoom,
-			"<img src='src\\images\\icon_completedLTAProject.png'> Completed LTA Project ": completedLTAProjectLayerZoom,
-			"<img src='src\\images\\icon_economicDevelopment.png'> Economic Development ": economicDevelopmentLayerZoom,
-			"<img src='src\\images\\icon_environment.png'> Environment ": environmentLayerZoom,
-			"<img src='src\\images\\icon_housing.png'> Housing ": housingLayerZoom,
-			"<img src='src\\images\\icon_landUse.png'> Land Use ": landUseLayerZoom,
-			"<img src='src\\images\\icon_transportation.png'> Transportation ": transportationLayerZoom
+			"<img src='src\\images\\icon_citizenProfiles.png'>Citizen Profiles": citizenProfileLayerZoom,
+			"<img src='src\\images\\icon_communityDevelopment.png'>Community Development&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp": communityDevelopmentLayerZoom,
+			"<img src='src\\images\\icon_completedLTAProject.png'>Completed LTA Project": completedLTAProjectLayerZoom,
+			"<img src='src\\images\\icon_economicDevelopment.png'>Economic Development": economicDevelopmentLayerZoom,
+			"<img src='src\\images\\icon_environment.png'>Environment": environmentLayerZoom,
+			"<img src='src\\images\\icon_housing.png'>Housing": housingLayerZoom,
+			"<img src='src\\images\\icon_landUse.png'>Land Use": landUseLayerZoom,
+			"<img src='src\\images\\icon_transportation.png'>Transportation": transportationLayerZoom
 		};		
 		
 		var legend = new L.control.layers(baseMaps, overlayMaps, {
@@ -407,7 +407,25 @@
 			collapsed: false
 		});
 		
-	
+		//Create geo-search
+		var geocoder = new L.Control.Geocoder.nominatim();
+		
+		var geoControl = L.Control.geocoder({
+				geocoder: geocoder,
+				position: 'topright'
+		});
+		
+		//Create description search
+		var descSearch = new L.Control.Search({
+			position: 'topright',
+			layer: caseStudiesLayer,
+			initial: false
+		});
+		
+		//Add search controls
+		map.addControl(geoControl);
+		map.addControl(descSearch);
+		
 		//Toggles layer and legend visibility based on scale
 		var i = 0;
 		map.on('zoomend', function(e) {
@@ -423,7 +441,11 @@
 				map.removeLayer(osm);
 				map.removeLayer(aer);
 				map.removeControl(legend);
+				map.removeControl(geoControl);
+				map.removeControl(descSearch);
 				map.addControl(legendZoom);
+				map.addControl(geoControl);
+				map.addControl(descSearch);
 				map.addLayer(citizenProfileLayerZoom);
 				map.addLayer(communityDevelopmentLayerZoom);
 				map.addLayer(completedLTAProjectLayerZoom);
@@ -446,8 +468,12 @@
 				map.removeLayer(transportationLayerZoom);
 				map.removeLayer(osmZoom);
 				map.removeLayer(aerZoom);
+				map.removeControl(geoControl);
+				map.removeControl(descSearch);				
 				map.removeControl(legendZoom);
 				map.addControl(legend);
+				map.addControl(geoControl);
+				map.addControl(descSearch);				
 				map.addLayer(citizenProfileLayer);
 				map.addLayer(communityDevelopmentLayer);
 				map.addLayer(completedLTAProjectLayer);
@@ -457,6 +483,7 @@
 				map.addLayer(landUseLayer);
 				map.addLayer(transportationLayer);
 				map.addLayer(osm);
+
 				i=0;
 			}
 		});
@@ -467,7 +494,7 @@
 		var miniMap = new L.Control.MiniMap(miniURL, {aimingRectOptions: rect1, 
 			zoomLevelFixed: 7, 
 			autoToggleDisplay: false,
-			width: 250,
+			width: 225,
 			height:200
 		}).addTo(map);
 		
@@ -491,23 +518,7 @@
 			
 		});
 		map.addControl(btn);		
-
-		//Add geo-search
-		var geocoder = L.Control.Geocoder.nominatim(),
-			control = L.Control.geocoder({
-				geocoder: geocoder,
-				position: 'topleft',
-		}).addTo(map);
-		
-		
-		//Add description search
-		map.addControl( new L.Control.Search({
-			position: 'topleft',
-			layer: caseStudiesLayer,
-			initial: false})
-		);
-
-
+	
 	</script>
 </body>
 </html>

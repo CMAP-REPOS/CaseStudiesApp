@@ -19,7 +19,7 @@
 	L.Control.Geocoder = L.Control.extend({
 		options: {
 			showResultIcons: false,
-			collapsed: true,
+			collapsed: false,
 			expand: 'click',
 			position: 'topright',
 			placeholder: 'Search...',
@@ -111,9 +111,9 @@
 			}
 
 			this._geocodeMarker = new L.Marker(result.center)
-				.bindPopup(result.name)
+				// .bindPopup(result.name)
 				.addTo(this._map)
-				.openPopup();
+				// .openPopup();
 
 			return this;
 		},
@@ -244,7 +244,7 @@
 		geocode: function(query, cb, context) {
 			L.Control.Geocoder.jsonp(this.options.serviceUrl + 'search/', {
 				q: query,
-				limit: 5,
+				limit: 3,
 				format: 'json'
 			}, function(data) {
 				var results = [];

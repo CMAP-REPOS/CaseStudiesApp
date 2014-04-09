@@ -44,9 +44,9 @@ L.Control.Search = L.Control.extend({
 		tooltipLimit: -1,			//limit max results to show in tooltip. -1 for no limit.
 		tipAutoSubmit: true,  		//auto map panTo when click on tooltip
 		autoResize: false,			//autoresize on input change
-		autoCollapse: true,		//collapse search control after submit(on button or on tips if enabled tipAutoSubmit)
+		autoCollapse: false,		//collapse search control after submit(on button or on tips if enabled tipAutoSubmit)
 		//TODO add option for persist markerLoc after collapse!
-		autoCollapseTime: 1200,		//delay for autoclosing alert and collapse after blur
+		autoCollapseTime: 12000000,		//delay for autoclosing alert and collapse after blur
 		animateLocation: true,		//animate a circle over location found
 		circleLocation: true,		//draw a circle in location found
 		markerLocation: false,		//draw a marker in location found
@@ -146,22 +146,22 @@ L.Control.Search = L.Control.extend({
 		this._input.style.display = 'block';
 		L.DomUtil.addClass(this._container, 'search-exp');	
 		this._input.focus();
-		this._map.on('dragstart', this.collapse, this);
+		// this._map.on('dragstart', this.collapse, this);
 		return this;	
 	},
 
 	collapse: function() {
-		this._hideTooltip();
+		// this._hideTooltip();
 		this.cancel();
-		this._alert.style.display = 'none';
-		this._input.style.display = 'none';
-		this._input.blur();
-		this._cancel.style.display = 'none';
-		L.DomUtil.removeClass(this._container, 'search-exp');		
-		//this._markerLoc.hide();//maybe unuseful
-		this._map.off('dragstart', this.collapse, this);
-		this.fire('search_collapsed');
-		return this;
+		// this._alert.style.display = 'none';
+		// this._input.style.display = 'none';
+		// this._input.blur();
+		// this._cancel.style.display = 'none';
+		// L.DomUtil.removeClass(this._container, 'search-exp');		
+		// //this._markerLoc.hide();//maybe unuseful
+		// this._map.off('dragstart', this.collapse, this);
+		// this.fire('search_collapsed');
+		// return this;
 	},
 	
 	collapseDelayed: function() {	//collapse after delay, used on_input blur
@@ -227,6 +227,7 @@ L.Control.Search = L.Control.extend({
 		var button = L.DomUtil.create('a', className, this._container);
 		button.href = '#';
 		button.title = title;
+		this.expand();
 
 		L.DomEvent
 			.on(button, 'click', L.DomEvent.stop, this)
